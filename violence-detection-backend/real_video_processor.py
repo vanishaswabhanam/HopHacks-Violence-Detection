@@ -6,6 +6,8 @@ import json
 from typing import List, Dict, Tuple
 import subprocess
 import tempfile
+from cnn_inference import CNNViolenceDetector
+from multi_class_inference import MultiClassViolenceDetector
 
 class RealVideoProcessor:
     """REAL video processing pipeline - no mock data!"""
@@ -15,6 +17,22 @@ class RealVideoProcessor:
         self.frame_size = (224, 224)
         self.temp_dir = Path("./temp_frames")
         self.temp_dir.mkdir(exist_ok=True)
+        
+        # initialize CNN detector
+        try:
+            self.cnn_detector = CNNViolenceDetector()
+            print("CNN detector initialized")
+        except Exception as e:
+            print(f"CNN detector failed to initialize: {e}")
+            self.cnn_detector = None
+        
+        # initialize multi-class detector
+        try:
+            self.multi_class_detector = MultiClassViolenceDetector()
+            print("Multi-class detector initialized")
+        except Exception as e:
+            print(f"Multi-class detector failed to initialize: {e}")
+            self.multi_class_detector = None
         
     def convert_video_with_ffmpeg(self, input_path: str, output_path: str) -> bool:
         """convert video to a format OpenCV can read using ffmpeg"""
@@ -91,14 +109,15 @@ class RealVideoProcessor:
         print(f"   ✅ Total extracted: {len(frames)} frames")
         return frames
     
-    def analyze_frames_for_violence(self, frames: List[np.ndarray]) -> Dict:
-        """analyze frames for violence indicators using computer vision"""
+    def analyze_frames_for_violence(self, frames: List[np.ndarray], video_path: str = None) -> Dict:
+        """analyze frames for violence indicators using computer vision + CNN"""
         if not frames:
             return {"threat_level": "unknown", "confidence": 0.0, "indicators": []}
         
         indicators = []
         threat_score = 0.0
         
+        # traditional computer vision analysis
         for i, frame in enumerate(frames):
             # convert to different color spaces for analysis
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -140,6 +159,70 @@ class RealVideoProcessor:
                 indicators.append(f"High edge density (frame {i})")
                 threat_score += 0.1
         
+        # CNN-based analysis (if available)
+        cnn_analysis = None
+        if self.cnn_detector:
+            try:
+                cnn_analysis = self.cnn_detector.analyze_video_segment(frames)
+                
+                # add CNN indicators
+                if cnn_analysis['threat_level'] == 'high':
+                    indicators.append(f"CNN: High violence confidence ({cnn_analysis['confidence']:.2f})")
+                    threat_score += 0.4
+                elif cnn_analysis['threat_level'] == 'medium':
+                    indicators.append(f"CNN: Medium violence confidence ({cnn_analysis['confidence']:.2f})")
+                    threat_score += 0.2
+                else:
+                    indicators.append(f"CNN: Normal activity ({cnn_analysis['confidence']:.2f})")
+                
+                # combine CNN confidence with traditional analysis
+                cnn_weight = 0.6  # CNN gets more weight
+                cv_weight = 0.4   # traditional CV gets less weight
+                
+                combined_confidence = (cnn_weight * cnn_analysis['confidence'] + 
+                                     cv_weight * threat_score)
+                threat_score = combined_confidence
+                
+            except Exception as e:
+                print(f"CNN analysis failed: {e}")
+                indicators.append("CNN analysis unavailable")
+        
+        # Multi-class analysis (if available)
+        multi_class_analysis = None
+        if self.multi_class_detector and video_path:
+            try:
+                # Use video path for category prediction
+                prediction = self.multi_class_detector.predict_category(video_path)
+                
+                if prediction['status'] == 'success':
+                    threat_type = prediction['class_name']
+                    confidence = prediction['confidence']
+                    color_code = prediction['color_code']
+                    threat_level = prediction['threat_level']
+                    
+                    indicators.append(f"Multi-class: {threat_type} detected ({confidence:.2f}, {color_code})")
+                    
+                    # adjust threat score based on multi-class prediction
+                    if threat_level == 'critical':
+                        threat_score += 0.5
+                    elif threat_level == 'high':
+                        threat_score += 0.3
+                    elif threat_level == 'medium':
+                        threat_score += 0.1
+                    
+                    # create multi-class analysis result
+                    multi_class_analysis = {
+                        'threat_type': threat_type,
+                        'threat_level': threat_level,
+                        'confidence': confidence,
+                        'color_code': color_code,
+                        'analyzed_frames': len(frames)
+                    }
+                
+            except Exception as e:
+                print(f"Multi-class analysis failed: {e}")
+                indicators.append("Multi-class analysis unavailable")
+        
         # normalize threat score
         threat_score = min(threat_score, 1.0)
         
@@ -151,12 +234,33 @@ class RealVideoProcessor:
         else:
             threat_level = "low"
         
-        return {
+        result = {
             "threat_level": threat_level,
             "confidence": round(threat_score, 2),
             "indicators": indicators,
             "frames_analyzed": len(frames)
         }
+        
+        # add CNN analysis details if available
+        if cnn_analysis:
+            result["cnn_analysis"] = {
+                "threat_level": cnn_analysis['threat_level'],
+                "confidence": cnn_analysis['confidence'],
+                "abnormal_ratio": cnn_analysis['abnormal_ratio'],
+                "abnormal_frames": cnn_analysis['abnormal_frames']
+            }
+        
+        # add multi-class analysis details if available
+        if multi_class_analysis:
+            result["multi_class_analysis"] = {
+                "threat_type": multi_class_analysis['threat_type'],
+                "threat_level": multi_class_analysis['threat_level'],
+                "confidence": multi_class_analysis['confidence'],
+                "color_code": multi_class_analysis['color_code'],
+                "analyzed_frames": multi_class_analysis['analyzed_frames']
+            }
+        
+        return result
     
     def process_video_file(self, video_path: str) -> Dict:
         """process a single video directory completely"""
@@ -176,7 +280,7 @@ class RealVideoProcessor:
             }
         
         # analyze frames for violence
-        analysis = self.analyze_frames_for_violence(frames)
+        analysis = self.analyze_frames_for_violence(frames, video_path)
         
         # determine threat type based on filename and analysis
         if "Fighting" in filename:
@@ -188,7 +292,7 @@ class RealVideoProcessor:
         else:
             threat_type = "normal"
         
-        return {
+        result = {
             "filename": filename,
             "status": "success",
             "threat_level": analysis["threat_level"],
@@ -199,6 +303,14 @@ class RealVideoProcessor:
             "indicators": analysis["indicators"],
             "frame_shape": frames[0].shape if frames else None
         }
+        
+        # add any additional analysis results
+        if "cnn_analysis" in analysis:
+            result["cnn_analysis"] = analysis["cnn_analysis"]
+        if "multi_class_analysis" in analysis:
+            result["multi_class_analysis"] = analysis["multi_class_analysis"]
+        
+        return result
     
     def process_category(self, category: str, max_videos: int = 3) -> Dict:
         """process videos from a specific category"""
