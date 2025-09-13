@@ -1,7 +1,15 @@
 fastapi
 uvicorn
 opencv-python
-numpy
+opencv-python-headless
+ffmpeg-python
 python-multipart
 python-dotenv
 requests
+numpy
+torch
+torchvision
+Pillow
+scikit-learn
+redis
+aioredis
