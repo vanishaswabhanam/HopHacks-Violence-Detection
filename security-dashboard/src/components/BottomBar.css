@@ -1,0 +1,67 @@
+.bottom-bar {
+  height: 60px;
+  background-color: #111;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.system-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.control-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.start-btn {
+  background-color: #00aa44;
+  color: white;
+}
+
+.start-btn:hover {
+  background-color: #00cc55;
+}
+
+.stop-btn {
+  background-color: #ff4444;
+  color: white;
+}
+
+.stop-btn:hover {
+  background-color: #ff6666;
+}
+
+.export-btn {
+  background-color: #0066cc;
+  color: white;
+}
+
+.export-btn:hover {
+  background-color: #0088ee;
+}
+
+.statistics {
+  display: flex;
+  gap: 30px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ccc;
+  font-size: 14px;
+}

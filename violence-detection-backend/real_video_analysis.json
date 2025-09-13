@@ -1,0 +1,629 @@
+{
+  "RoadAccidents": {
+    "category": "RoadAccidents",
+    "total_videos": 76,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "RoadAccidents032_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "normal",
+        "confidence": 1.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 1)",
+          "High motion detected (frame 2)",
+          "High motion detected (frame 3)",
+          "High motion detected (frame 4)",
+          "High motion detected (frame 5)",
+          "High motion detected (frame 6)",
+          "High motion detected (frame 7)",
+          "High motion detected (frame 8)",
+          "High motion detected (frame 9)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "RoadAccidents105_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "normal",
+        "confidence": 1.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 1)",
+          "High motion detected (frame 3)",
+          "High motion detected (frame 5)",
+          "High motion detected (frame 6)",
+          "High motion detected (frame 7)",
+          "High motion detected (frame 8)",
+          "High motion detected (frame 9)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Arson": {
+    "category": "Arson",
+    "total_videos": 22,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Arson014_x264.mp4",
+        "status": "success",
+        "threat_level": "low",
+        "threat_type": "normal",
+        "confidence": 0.4,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 5)",
+          "High motion detected (frame 7)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Arson020_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "normal",
+        "confidence": 0.8,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 4)",
+          "High motion detected (frame 5)",
+          "High motion detected (frame 7)",
+          "High motion detected (frame 8)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Shoplifting": {
+    "category": "Shoplifting",
+    "total_videos": 28,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Shoplifting053_x264.mp4",
+        "status": "success",
+        "threat_level": "low",
+        "threat_type": "normal",
+        "confidence": 0.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Shoplifting025_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "normal",
+        "confidence": 1.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 1)",
+          "High motion detected (frame 2)",
+          "High motion detected (frame 4)",
+          "High motion detected (frame 5)",
+          "High motion detected (frame 6)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Stealing": {
+    "category": "Stealing",
+    "total_videos": 64,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Stealing011_x264.mp4",
+        "status": "success",
+        "threat_level": "low",
+        "threat_type": "normal",
+        "confidence": 0.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Stealing010_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "normal",
+        "confidence": 0.8,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 2)",
+          "High motion detected (frame 3)",
+          "High motion detected (frame 4)",
+          "High motion detected (frame 5)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Burglary": {
+    "category": "Burglary",
+    "total_videos": 47,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Burglary053_x264.mp4",
+        "status": "success",
+        "threat_level": "low",
+        "threat_type": "normal",
+        "confidence": 0.4,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 6)",
+          "High motion detected (frame 7)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Burglary089_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "normal",
+        "confidence": 0.8,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 3)",
+          "High motion detected (frame 4)",
+          "High motion detected (frame 5)",
+          "High motion detected (frame 7)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Fighting": {
+    "category": "Fighting",
+    "total_videos": 8,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Fighting014_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "fighting",
+        "confidence": 1.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 1)",
+          "High motion detected (frame 2)",
+          "High motion detected (frame 3)",
+          "High motion detected (frame 4)",
+          "High motion detected (frame 6)",
+          "High motion detected (frame 7)",
+          "High motion detected (frame 8)",
+          "High motion detected (frame 9)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Fighting009_x264.mp4",
+        "status": "success",
+        "threat_level": "low",
+        "threat_type": "fighting",
+        "confidence": 0.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Vandalism": {
+    "category": "Vandalism",
+    "total_videos": 29,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Vandalism017_x264.mp4",
+        "status": "success",
+        "threat_level": "low",
+        "threat_type": "normal",
+        "confidence": 0.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Vandalism028_x264.mp4",
+        "status": "success",
+        "threat_level": "low",
+        "threat_type": "normal",
+        "confidence": 0.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Explosion": {
+    "category": "Explosion",
+    "total_videos": 23,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Explosion008_x264.mp4",
+        "status": "success",
+        "threat_level": "low",
+        "threat_type": "normal",
+        "confidence": 0.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Explosion009_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "normal",
+        "confidence": 1.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "Red color detected (frame 0)",
+          "High motion detected (frame 1)",
+          "Red color detected (frame 1)",
+          "Red color detected (frame 2)",
+          "High motion detected (frame 3)",
+          "High motion detected (frame 4)",
+          "Red color detected (frame 4)",
+          "High motion detected (frame 5)",
+          "Red color detected (frame 5)",
+          "High motion detected (frame 6)",
+          "Red color detected (frame 6)",
+          "Red color detected (frame 7)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Arrest": {
+    "category": "Arrest",
+    "total_videos": 26,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Arrest009_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "suspicious",
+        "confidence": 1.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 1)",
+          "Rapid color changes (frame 1)",
+          "High motion detected (frame 3)",
+          "Rapid color changes (frame 3)",
+          "High motion detected (frame 5)",
+          "Rapid color changes (frame 5)",
+          "High motion detected (frame 7)",
+          "Rapid color changes (frame 7)",
+          "High motion detected (frame 9)",
+          "Rapid color changes (frame 9)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Arrest041_x264.mp4",
+        "status": "success",
+        "threat_level": "medium",
+        "threat_type": "suspicious",
+        "confidence": 0.6,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 4)",
+          "High motion detected (frame 5)",
+          "High motion detected (frame 9)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Abuse": {
+    "category": "Abuse",
+    "total_videos": 39,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Abuse027_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "suspicious",
+        "confidence": 0.8,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 1)",
+          "High motion detected (frame 3)",
+          "High motion detected (frame 5)",
+          "High motion detected (frame 7)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Abuse026_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "suspicious",
+        "confidence": 1.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 1)",
+          "High motion detected (frame 2)",
+          "High motion detected (frame 3)",
+          "High motion detected (frame 4)",
+          "High motion detected (frame 5)",
+          "High motion detected (frame 6)",
+          "High motion detected (frame 7)",
+          "High motion detected (frame 8)",
+          "High motion detected (frame 9)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Robbery": {
+    "category": "Robbery",
+    "total_videos": 105,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Robbery049_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "violence",
+        "confidence": 1.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 2)",
+          "Rapid color changes (frame 2)",
+          "High motion detected (frame 4)",
+          "High motion detected (frame 5)",
+          "High motion detected (frame 6)",
+          "High motion detected (frame 7)",
+          "Rapid color changes (frame 7)",
+          "High motion detected (frame 8)",
+          "Rapid color changes (frame 8)",
+          "High motion detected (frame 9)",
+          "Rapid color changes (frame 9)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Robbery048_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "violence",
+        "confidence": 1.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 1)",
+          "High motion detected (frame 2)",
+          "High motion detected (frame 3)",
+          "High motion detected (frame 5)",
+          "High motion detected (frame 6)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Assault": {
+    "category": "Assault",
+    "total_videos": 23,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Assault015_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "violence",
+        "confidence": 1.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 1)",
+          "High motion detected (frame 3)",
+          "High motion detected (frame 4)",
+          "High motion detected (frame 5)",
+          "High motion detected (frame 6)",
+          "High motion detected (frame 7)",
+          "High motion detected (frame 8)",
+          "High motion detected (frame 9)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Assault014_x264.mp4",
+        "status": "success",
+        "threat_level": "low",
+        "threat_type": "violence",
+        "confidence": 0.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  },
+  "Shooting": {
+    "category": "Shooting",
+    "total_videos": 30,
+    "processed_videos": 2,
+    "successful_videos": 2,
+    "videos": [
+      {
+        "filename": "Shooting020_x264.mp4",
+        "status": "success",
+        "threat_level": "high",
+        "threat_type": "normal",
+        "confidence": 1.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [
+          "High motion detected (frame 2)",
+          "Rapid color changes (frame 2)",
+          "High motion detected (frame 4)",
+          "Rapid color changes (frame 4)",
+          "High motion detected (frame 6)",
+          "Rapid color changes (frame 6)",
+          "High motion detected (frame 7)",
+          "High motion detected (frame 8)"
+        ],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      },
+      {
+        "filename": "Shooting021_x264.mp4",
+        "status": "success",
+        "threat_level": "low",
+        "threat_type": "normal",
+        "confidence": 0.0,
+        "frames_extracted": 10,
+        "frames_analyzed": 10,
+        "indicators": [],
+        "frame_shape": [
+          224,
+          224,
+          3
+        ]
+      }
+    ]
+  }
+}
