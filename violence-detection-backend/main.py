@@ -434,11 +434,11 @@ async def get_videos_by_category(category: str):
 async def start_video_stream(stream_id: str, video_path: Optional[str] = None, category: Optional[str] = None):
     """Start streaming a video"""
     try:
-        success = video_streamer.start_stream(stream_id, video_path, category)
-        if success:
-            return {"status": "success", "message": f"Stream {stream_id} started"}
+        result = video_streamer.start_stream(stream_id, stream_id)  # Pass stream_id as camera_id
+        if result["status"] == "started":
+            return {"status": "success", "message": f"Stream {stream_id} started", "stream_info": result}
         else:
-            return {"status": "error", "message": f"Failed to start stream {stream_id}"}
+            return {"status": "error", "message": result.get("message", f"Failed to start stream {stream_id}")}
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
@@ -446,11 +446,11 @@ async def start_video_stream(stream_id: str, video_path: Optional[str] = None, c
 async def stop_video_stream(stream_id: str):
     """Stop a video stream"""
     try:
-        success = video_streamer.stop_stream(stream_id)
-        if success:
+        result = video_streamer.stop_stream(stream_id)
+        if result["status"] == "stopped":
             return {"status": "success", "message": f"Stream {stream_id} stopped"}
         else:
-            return {"status": "error", "message": f"Stream {stream_id} not found"}
+            return {"status": "error", "message": result.get("message", f"Stream {stream_id} not found")}
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
@@ -459,7 +459,7 @@ async def get_stream_info(stream_id: str):
     """Get information about a video stream"""
     try:
         info = video_streamer.get_stream_info(stream_id)
-        if info:
+        if info["status"] != "not_found":
             return {"status": "success", "stream_info": info}
         else:
             return {"status": "error", "message": f"Stream {stream_id} not found"}
