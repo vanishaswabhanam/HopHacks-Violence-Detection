@@ -1,0 +1,69 @@
+{
+  "incidents": [
+    {
+      "evidence_id": "fighting_cam_1_20250913_173057",
+      "incident_id": "inc_fighting_cam_1_20250913_173057",
+      "timestamp": "2025-09-13T17:30:57.277188",
+      "detection": {
+        "camera_id": "cam_1",
+        "threat_type": "fighting",
+        "confidence": 0.95,
+        "severity": "high",
+        "indicators": [
+          "High motion detected",
+          "Rapid color changes"
+        ],
+        "location": {
+          "x": 150,
+          "y": 200
+        },
+        "detection_timestamp": "16:45:30"
+      },
+      "evidence": {
+        "video_clip_path": null,
+        "video_clip_size": 0,
+        "clip_duration_before": 10,
+        "clip_duration_after": 10,
+        "extraction_method": "ffmpeg"
+      },
+      "system": {
+        "collection_timestamp": "2025-09-13T17:30:57.277194",
+        "evidence_collector_version": "1.0",
+        "processing_status": "failed"
+      }
+    },
+    {
+      "evidence_id": "robbery_cam_2_20250913_180420",
+      "incident_id": "inc_robbery_cam_2_20250913_180420",
+      "timestamp": "2025-09-13T18:04:20.480840",
+      "detection": {
+        "camera_id": "cam_2",
+        "threat_type": "robbery",
+        "confidence": 0.88,
+        "severity": "unknown",
+        "indicators": [],
+        "location": {
+          "x": 200,
+          "y": 300
+        },
+        "detection_timestamp": "17:35:00"
+      },
+      "evidence": {
+        "video_clip_path": null,
+        "video_clip_size": 0,
+        "clip_duration_before": 10,
+        "clip_duration_after": 10,
+        "extraction_method": "ffmpeg"
+      },
+      "system": {
+        "collection_timestamp": "2025-09-13T18:04:20.481017",
+        "evidence_collector_version": "1.0",
+        "processing_status": "failed"
+      }
+    }
+  ],
+  "metadata": {
+    "total_incidents": 2,
+    "last_updated": "2025-09-13T18:04:20.483174"
+  }
+}

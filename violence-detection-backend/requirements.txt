@@ -13,3 +13,4 @@ Pillow
 scikit-learn
 redis
 aioredis
+discord-webhook

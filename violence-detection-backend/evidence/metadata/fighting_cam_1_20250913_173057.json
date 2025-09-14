@@ -1,0 +1,32 @@
+{
+  "evidence_id": "fighting_cam_1_20250913_173057",
+  "incident_id": "inc_fighting_cam_1_20250913_173057",
+  "timestamp": "2025-09-13T17:30:57.277188",
+  "detection": {
+    "camera_id": "cam_1",
+    "threat_type": "fighting",
+    "confidence": 0.95,
+    "severity": "high",
+    "indicators": [
+      "High motion detected",
+      "Rapid color changes"
+    ],
+    "location": {
+      "x": 150,
+      "y": 200
+    },
+    "detection_timestamp": "16:45:30"
+  },
+  "evidence": {
+    "video_clip_path": null,
+    "video_clip_size": 0,
+    "clip_duration_before": 10,
+    "clip_duration_after": 10,
+    "extraction_method": "ffmpeg"
+  },
+  "system": {
+    "collection_timestamp": "2025-09-13T17:30:57.277194",
+    "evidence_collector_version": "1.0",
+    "processing_status": "failed"
+  }
+}
